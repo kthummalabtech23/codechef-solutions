@@ -1,0 +1,21 @@
+def is_lapindrome(s):
+    n = len(s)
+
+    if n % 2 == 0:
+        left = s[:n // 2]
+        right = s[n // 2:]
+    else:
+        left = s[:n // 2]
+        right = s[n // 2 + 1:]
+
+    if sorted(left) == sorted(right):
+        return "YES"
+    else:
+        return "NO"
+
+
+t = int(input())
+
+for _ in range(t):
+    s = input().strip()
+    print(is_lapindrome(s))
